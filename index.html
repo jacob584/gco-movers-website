@@ -279,6 +279,11 @@
   @media (max-width:880px){.box-stack{display:none}}
   @media (max-width:640px){.label-card{padding:9px 12px}.label-card b{font-size:1.02rem}}
 
+  /* Round "sticker" badge on the About photo */
+  .sticker{position:absolute;left:-22px;bottom:34px;width:118px;height:118px;border-radius:50%;background:var(--amber);color:var(--navy);display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em;line-height:1.15;transform:rotate(-10deg);box-shadow:0 16px 30px -12px rgba(0,0,0,.45);border:3px dashed rgba(30,61,47,.35);z-index:2;animation:bob 6s ease-in-out infinite}
+  .why .stencil{color:var(--amber)}
+  @media (max-width:640px){.sticker{width:92px;height:92px;font-size:.66rem;left:-6px}}
+
   /* Responsive */
   @media (max-width:1024px){
     .service-grid{grid-template-columns:repeat(2,1fr)}
@@ -446,6 +451,7 @@
 <section id="process">
   <div class="container">
     <div class="section-head reveal">
+      <span class="stencil">Step by step</span>
       <span class="eyebrow">How It Works</span>
       <h2>Simple from the first call to the final delivery.</h2>
       <p>Moving with us is efficient and hassle-free. Here is what to expect at each step.</p>
@@ -479,6 +485,7 @@
 <section class="why">
   <div class="container">
     <div class="section-head reveal">
+      <span class="stencil">Priority: care</span>
       <span class="eyebrow">Why Choose Us</span>
       <h2>Care and clear communication on every job.</h2>
       <p>A move is personal. We treat your belongings and your schedule with the respect they deserve.</p>
@@ -509,10 +516,11 @@
 </section>
 
 <!-- ============ ABOUT ============ -->
-<section id="about">
+<section id="about" class="tape-top">
   <div class="container about-grid">
     <div class="about-media reveal">
       <div class="accent"></div>
+      <div class="sticker" aria-hidden="true">Handle<br>with care</div>
       <div class="frame" id="aboutFrame">
         <img src="images/about-team.jpg" alt="G&amp;CO Movers crew with moving boxes" onerror="this.closest('.frame').classList.add('img-missing')">
         <div class="img-fallback">Add a crew photo as<br><code>images/about-team.jpg</code></div>
@@ -657,6 +665,7 @@
 <section id="areas" style="background:var(--white)">
   <div class="container">
     <div class="section-head reveal">
+      <span class="stencil">Destination</span>
       <span class="eyebrow">Where We Work</span>
       <h2>Serving Baltimore, Arlington, and Greenbelt.</h2>
       <p>Local moves in these areas, plus long-distance relocations across the country.</p>

@@ -284,6 +284,41 @@
   .why .stencil{color:var(--amber)}
   @media (max-width:640px){.sticker{width:92px;height:92px;font-size:.66rem;left:-6px}}
 
+  /* Latest projects */
+  .projects{margin-top:80px}
+  .projects-title{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-bottom:28px}
+  .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .project{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;transition:transform .35s ease,box-shadow .35s ease}
+  .project:hover{transform:translateY(-6px) rotate(-.4deg);box-shadow:var(--shadow)}
+  .project h4{font-family:var(--display);font-size:1.25rem;margin:16px 0 10px}
+  .project p{color:var(--muted);font-size:.96rem}
+  .tag-sm{display:inline-block;background:var(--kraft-l);color:var(--kraft-d);font-weight:700;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:6px 10px;border-radius:6px;border:1px dashed var(--kraft-d)}
+  /* About stats */
+  .about-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0 32px}
+  .stat{display:flex;gap:12px;align-items:center;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px}
+  .stat-icon{flex:0 0 40px;height:40px;border-radius:12px;background:var(--navy);color:var(--amber);display:grid;place-items:center;font-size:1.05rem}
+  .stat b{display:block;font-family:var(--display);font-size:1.7rem;color:var(--navy);line-height:1}
+  .stat small{color:var(--muted);font-size:.8rem}
+  /* Scrolling service ticker */
+  .marquee{background:var(--amber);color:var(--navy);overflow:hidden;white-space:nowrap;padding:16px 0;font-family:var(--display);font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+  .marquee-track{display:inline-block;animation:marq 26s linear infinite}
+  .marquee span{margin:0 26px}
+  .marquee span::after{content:"\25C6";margin-left:52px;font-size:.7rem;opacity:.6}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  /* Moving truck across the trust strip */
+  .trust{position:relative;overflow:hidden}
+  .truck{position:absolute;bottom:-6px;left:-110px;width:84px;height:auto;animation:drive 16s linear infinite;z-index:3;pointer-events:none}
+  @keyframes drive{from{transform:translateX(0)}to{transform:translateX(calc(100vw + 260px))}}
+  /* Shine sweep on the main buttons */
+  .btn-primary{position:relative;overflow:hidden}
+  .btn-primary::after{content:"";position:absolute;top:0;left:-75%;width:50%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 3.8s ease-in-out infinite}
+  @keyframes shine{0%,60%{left:-75%}100%{left:130%}}
+  /* Icons wobble on card hover */
+  .card:hover .icon,.why-card:hover .icon{animation:wobble .6s ease}
+  @keyframes wobble{0%,100%{transform:rotate(0)}25%{transform:rotate(-8deg)}75%{transform:rotate(8deg)}}
+  @media (max-width:880px){.project-grid{grid-template-columns:1fr}}
+  @media (max-width:640px){.about-stats{grid-template-columns:1fr}}
+
   /* Responsive */
   @media (max-width:1024px){
     .service-grid{grid-template-columns:repeat(2,1fr)}
@@ -398,8 +433,11 @@
   </div>
 </section>
 
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>Residential moving</span><span>Commercial moving</span><span>Packing &amp; unpacking</span><span>Furniture assembly</span><span>Local moves</span><span>Long distance</span><span>Office relocation</span><span>Careful handling</span><span>Residential moving</span><span>Commercial moving</span><span>Packing &amp; unpacking</span><span>Furniture assembly</span><span>Local moves</span><span>Long distance</span><span>Office relocation</span><span>Careful handling</span></div></div>
+
 <!-- ============ TRUST STRIP ============ -->
 <div class="trust">
+  <svg class="truck" viewBox="0 0 120 60" aria-hidden="true"><rect x="4" y="12" width="70" height="36" rx="4" fill="#F5A623"/><path d="M76 24h22l16 14v10H76z" fill="#F5A623"/><rect x="84" y="28" width="18" height="10" fill="#1E3D2F"/><text x="12" y="36" font-family="Outfit,sans-serif" font-weight="800" font-size="11" fill="#1E3D2F">G&amp;CO MOVERS</text><circle cx="26" cy="50" r="7" fill="#1E3D2F"/><circle cx="94" cy="50" r="7" fill="#1E3D2F"/></svg>
   <div class="container trust-row">
     <div><b>&#10003;</b> Careful packing &amp; wrapping</div>
     <div><b>&#10003;</b> Local &amp; long distance</div>
@@ -529,13 +567,18 @@
     <div class="about-copy reveal d1">
       <span class="eyebrow">About Us</span>
       <h2>Movers you can trust.</h2>
-      <p>At G&amp;CO Movers, we are more than movers. We are partners in your relocation. We bring a dedicated team, a passion for customer satisfaction, and real care for your belongings.</p>
-      <p>From homes to offices, packing to unpacking, and everything in between, we handle it all with professionalism and precision.</p>
+      <p>At G&amp;CO Movers, we are more than just movers&mdash;we are partners in your relocation journey. With years of expertise, a dedicated team, and a passion for customer satisfaction, we ensure a stress-free and seamless moving experience.</p>
+      <p>From homes to offices, packing to unpacking, and everything in between, we handle it all with care, precision, and professionalism. Your belongings are safe with us, and your trust drives us to deliver excellence every time.</p>
       <ul class="checks">
         <li><i>&#10003;</i> A dedicated team that plans every detail</li>
         <li><i>&#10003;</i> Care for fragile and valuable items</li>
         <li><i>&#10003;</i> Residential, commercial, and packing services</li>
       </ul>
+      <div class="about-stats">
+        <div class="stat"><span class="stat-icon" aria-hidden="true">&#10003;</span><div><b data-count="200" data-suffix="+">200+</b><small>Projects Done</small></div></div>
+        <div class="stat"><span class="stat-icon" aria-hidden="true">&#9825;</span><div><b data-count="170" data-suffix="+">170+</b><small>Satisfied Clients</small></div></div>
+        <div class="stat"><span class="stat-icon" aria-hidden="true">&#9201;</span><div><b data-count="20" data-suffix="">20</b><small>Years Experience</small></div></div>
+      </div>
       <a class="btn btn-dark" href="#quote">Start your quote</a>
     </div>
   </div>
@@ -559,6 +602,14 @@
         <img src="images/crew-warehouse.png" alt="Boxes and crates staged in the warehouse" loading="lazy">
         <figcaption>Organized staging</figcaption>
       </figure>
+    </div>
+    <div class="projects">
+      <h3 class="projects-title reveal">Latest projects</h3>
+      <div class="project-grid">
+        <article class="project reveal"><span class="tag-sm">Office</span><h4>Office Relocation Made Easy</h4><p>Moved a 50-person office quickly and efficiently.</p></article>
+        <article class="project reveal d1"><span class="tag-sm">Home</span><h4>Hassle-Free Home Move</h4><p>Safely transported a family&rsquo;s belongings across 500 km.</p></article>
+        <article class="project reveal d2"><span class="tag-sm">Storage</span><h4>Secure Equipment Storage</h4><p>Provided safe storage for valuable electronics.</p></article>
+      </div>
     </div>
   </div>
 </section>
@@ -789,6 +840,24 @@
       dots[current].classList.add('on');
     }, 4500);
   }
+
+  // Count-up numbers when they scroll into view
+  const cio = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target;
+      const end = +el.dataset.count, suf = el.dataset.suffix || '';
+      const t0 = performance.now(), dur = 1600;
+      const step = t => {
+        const p = Math.min((t - t0) / dur, 1);
+        el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+      cio.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('[data-count]').forEach(el => cio.observe(el));
 
   // Header shrink on scroll
   const header = document.getElementById('top');
